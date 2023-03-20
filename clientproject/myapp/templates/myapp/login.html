@@ -1,0 +1,45 @@
+{% load static %}
+
+
+{% block body %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<div class="container" style="padding: 60px;">
+    <div class="row ">
+        <div class="col-sm-12 col-lg-5" style="border: 1px solid; padding: 30px;margin: auto;">
+
+            <div>
+
+                {% for msg in messages %}
+                {{msg}}
+                {% endfor %}
+
+            </div>
+            <form id="form-login" role="form" method="POST" novalidate>
+                {% csrf_token %}
+                <h4>Login</h4>
+                <p>If you're a User, login here.</p>
+
+
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="uname">Username</label>
+                    <input type="text" id="inputusername" class="form-control" name="uname" />
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="upass">Password</label>
+                    <input type="password" id="inputusername" class="form-control" name="upass" />
+                </div>
+
+                <ul class="list-inline">
+                    <li><a href="/signup/">Create new account</a></li>
+                </ul>
+                <input type="submit" value="Login" class="btn btn-primary btn-block btn-sm"
+                    data-loading-text="Loading...">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

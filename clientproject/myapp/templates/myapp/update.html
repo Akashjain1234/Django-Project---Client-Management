@@ -1,0 +1,57 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}
+    Update |
+{% endblock title %} 
+
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<section class="w-100 p-4 d-flex justify-content-center pb-4">
+    <form action="" method="post" style="width: 22rem;">{% csrf_token %}
+      <div class="form-outline mb-4">
+        <label class="form-label" for="name" style="margin-left: 0px;color: black;">ID</label>
+        <h4 class="form-control">{{data.id}}</h4>
+        <div class="form-notch">
+            <div class="form-notch-leading" style="width: 9px;"></div>
+            <div class="form-notch-middle" style="width: 88.8px;"></div>
+            <div class="form-notch-trailing"></div>
+        </div>
+    </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="name" style="margin-left: 0px;">Name</label>
+        <input type="text" class="form-control" name='name' value="{{data.name}}">
+        <div class="form-notch">
+          <div class="form-notch-leading" style="width: 9px;"></div>
+          <div class="form-notch-middle" style="width: 88.8px;"></div>
+          <div class="form-notch-trailing"></div>
+        </div>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label" for="createdby" style="margin-left: 0px;">Created By</label>
+        <input type="text" class="form-control" name='createdby' value="{{data.Created_by}}">
+        <div class="form-notch">
+          <div class="form-notch-leading" style="width: 9px;"></div>
+          <div class="form-notch-middle" style="width: 88.8px;"></div>
+          <div class="form-notch-trailing"></div>
+        </div>
+      </div>
+  
+      
+  
+      
+      <center>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" style="height:53px;width:80px">Update</button>
+          <button class="btn btn-danger nav-item" type="submit" style="margin:5px;"><a href="/delete/{{data.id}}/"
+              class="nav-link link-light px-1"> Delete</a></button>
+        </div>
+      </center>
+    </form>
+  </section>
+    
+{% endblock body %}

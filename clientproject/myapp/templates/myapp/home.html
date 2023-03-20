@@ -1,0 +1,28 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}
+    Home |
+{% endblock title %}
+
+{% load static %}
+
+{% block body %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<center>
+    <div class="jumbotron" >
+      <h1 class="display-4">Project</h1>
+      <br>
+      <p class="lead">This is a simple project on Client management system.</p>
+      <hr class="my-4">
+      <p>It uses crud as its main functionality which including creation, readability, <br>updation and deletion of data and
+        has some another functions too.</p>
+        <br>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/add/" role="button">Add Client</a>
+        <a class="btn btn-primary btn-lg" href="/display/" role="button">Display Client</a>
+        <a class="btn btn-primary btn-lg" href="/project/" role="button">Add Project</a>
+        <a class="btn btn-primary btn-lg" href="/displaypro/" role="button">Display Project</a>
+      </p>
+    </div>
+  </center>
+{% endblock body %}
